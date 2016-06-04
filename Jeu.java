@@ -634,17 +634,22 @@ public class Jeu extends Application {
 				majNumCases(Joueur2, grille, root2, tour);
 				if (tour + 1 >= tabJoueur.length) {
 					tour = 0;
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
-				} else {
+				} 
+				
+				else {
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
 				}
 
 				if (Joueur2.cases.size() >= max) {
 
 					max = Joueur2.cases.size();
-				}
-				if (finparie2(tabJoueur, grille) == true) {
-					affichageFin(stage, tour + 1);
 				}
 
 			}
@@ -674,19 +679,22 @@ public class Jeu extends Application {
 				majContourCases(tabJoueur[tour], grille, root2, tour, Color.BLACK);
 				majNumCases(Joueur3, grille, root2, tour);
 				if (tour + 1 >= tabJoueur.length) {
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					tour = 0;
 					majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
-				} else {
+				} 
+				else {
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
 				}
 
 				if (Joueur3.cases.size() >= max) {
 
 					max = Joueur3.cases.size();
-				}
-
-				if (finparie2(tabJoueur, grille) == true) {
-					affichageFin(stage, tour + 1);
 				}
 
 			}
@@ -717,18 +725,24 @@ public class Jeu extends Application {
 				majContourCases(tabJoueur[tour], grille, root2, tour, Color.BLACK);
 				majNumCases(Joueur4, grille, root2, tour);
 				if (tour + 1 >= tabJoueur.length) {
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					tour = 0;
 					majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
-				} else {
+				} 
+				else {
+					
+					if (finparie2(tabJoueur, grille) == true) {
+						affichageFin(stage, tour + 1);
+					}
 					majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
 				}
-
+					
+                //
 				if (Joueur4.cases.size() >= max) {
 
 					max = Joueur4.cases.size();
-				}
-				if (finparie2(tabJoueur, grille) == true) {
-					affichageFin(stage, tour + 1);
 				}
 
 			}
@@ -973,7 +987,9 @@ public class Jeu extends Application {
 		majPoint(tabJoueur[tour], tour);
 		majContourCases(tabJoueur[tour], grille, root2, tour, Color.BLACK);
 		majNumCases(Joueur, grille, root2, tour);
+
 		if (tour + 1 >= tabJoueur.length) {
+
 			if (finparie2(tabJoueur, grille) == true) {
 				affichageFin(stage, tour + 1);
 			}
@@ -981,15 +997,12 @@ public class Jeu extends Application {
 			tour = 0;
 			majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
 		} else {
+
+			if (finparie2(tabJoueur, grille) == true) {
+				affichageFin(stage, tour + 1);
+			}
 			majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
 		}
-
-		if (finparie2(tabJoueur, grille) == true) {
-			affichageFin(stage, tour + 1);
-		}
-
-		System.out.println("meilleur choix" + meilleurChoix);
-		System.out.println("dernier choix" + Joueur.getDernierChoix());
 
 	}
 
@@ -1025,6 +1038,7 @@ public class Jeu extends Application {
 		majPoint(tabJoueur[tour], tour);
 		majContourCases(tabJoueur[tour], grille, root2, tour, Color.BLACK);
 		majNumCases(Joueur, grille, root2, tour);
+
 		if (tour + 1 >= tabJoueur.length) {
 			if (finparie2(tabJoueur, grille) == true) {
 				affichageFin(stage, tour + 1);
@@ -1032,11 +1046,12 @@ public class Jeu extends Application {
 			tour = 0;
 			majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
 		} else {
-			majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
-		}
 
-		if (finparie2(tabJoueur, grille) == true) {
-			affichageFin(stage, tour + 1);
+			majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
+			if (finparie2(tabJoueur, grille) == true) {
+				affichageFin(stage, tour + 1);
+			}
+
 		}
 
 	}
@@ -1129,13 +1144,15 @@ public class Jeu extends Application {
 				}
 				tour = 0;
 				majContourCases(tabJoueur[tour], grille, root2, tour, Color.WHITE);
-			} else {
+			} 
+			else {
+				if (finparie2(tabJoueur, grille) == true) {
+					affichageFin(stage, tour + 1);
+				}
 				majContourCases(tabJoueur[tour + 1], grille, root2, tour, Color.WHITE);
 			}
 
-			if (finparie2(tabJoueur, grille) == true) {
-				affichageFin(stage, tour + 1);
-			}
+			
 
 		}
 	}
