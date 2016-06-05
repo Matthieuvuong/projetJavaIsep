@@ -362,7 +362,7 @@ public class Jeu extends Application {
 		tabButton[1] = b2;
 
 		// bouton pour 4 joueurs
-		Button b3 = new Button("Quatres Joueurs");
+		Button b3 = new Button("Quatre Joueurs");
 		b3.setLayoutX(330);
 		b3.setLayoutY(150);
 
